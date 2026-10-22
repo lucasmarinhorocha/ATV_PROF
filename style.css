@@ -38,9 +38,10 @@ div p {
 font-size: 50px;
 color: goldenrod;
 background:linear-gradient(90deg,rgba(0, 131, 33, 0.534),rgb(3, 107, 177)) ;
-padding: 30px;
+padding: 15px;
 border-radius: 90px;
 text-align: center;
+
 }
 img {
     border: 5px dotted burlywood ;

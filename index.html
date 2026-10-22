@@ -1,39 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FELIZ ANIVERSARIO</title>
+    <title>FELIZ ANIVERSÁRIO</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-<main>
-    <div>
-        <img src="./047f6354-3717-400b-ad5a-0d61c63d8073.jpg" alt="Lindo">
 
-        <p>PARABENS</p>
-        <p>Lindo</p>
-    </div>
-</main>
+    <main>
+        <div>
+            <img src="./047f6354-3717-400b-ad5a-0d61c63d8073.jpg" alt="Lindo">
+            <p>PARABÉNS</p>
+        </div>
+    </main>
 
-<!-- Elemento de áudio (escondido) -->
-<audio id="audioAniversario" src="./audio.mp3"></audio>
+    <audio id="audioAniversario" src="./audio.mp3" preload="auto"></audio>
 
-<script>
-  function iniciarAudio() {
-    var audio = document.getElementById("audioAniversario");
-    audio.play();
+    <script>
+        const audio = document.getElementById("audioAniversario");
 
-    // Remove os ouvintes para o áudio tocar apenas uma vez
-    document.removeEventListener("click", iniciarAudio);
-    document.removeEventListener("touchstart", iniciarAudio);
-  }
+        function iniciarAudio() {
+            audio.play()
+                .then(() => {
+                    document.removeEventListener("click", iniciarAudio);
+                    document.removeEventListener("touchstart", iniciarAudio);
+                })
+                .catch((erro) => {
+                    console.log("Não foi possível iniciar o áudio:", erro);
+                });
+        }
 
-  // Toca o áudio assim que a pessoa clicar ou tocar na tela pela primeira vez
-  document.addEventListener("click", iniciarAudio);
-  document.addEventListener("touchstart", iniciarAudio);
-</script>
+        document.addEventListener("click", iniciarAudio);
+        document.addEventListener("touchstart", iniciarAudio);
+    </script>
 
 </body>
 </html>
